@@ -1,6 +1,7 @@
 set bell-style none
 
 alias reddit="env RTV_EDITOR=nvim RTV_BROWSER=links rtv --enable-media"
+alias links="links2"
 alias leo="python3 ~/Dokumente/Coding/Python/leo\ immobilien\ cli/main.py"
 alias imgdispH="read -p '' URL && wget -O /tmp/imgdisp $URL && img2txt -H $(tput lines) -d fstein -f utf8 /tmp/imgdisp && rm /tmp/imgdisp"
 alias imgdispW="read -p '' URL && wget -O /tmp/imgdisp $URL && img2txt -W $(tput cols) -d fstein -f utf8 /tmp/imgdisp && rm /tmp/imgdisp"
