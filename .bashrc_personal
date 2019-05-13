@@ -1,6 +1,6 @@
 set bell-style none
 
-alias reddit="env RTV_EDITOR=nvim RTV_BROWSER=links rtv --enable-media"
+alias reddit="env RTV_EDITOR=vim RTV_BROWSER=links rtv --enable-media"
 alias links="links2"
 alias leo="python3 ~/Dokumente/Coding/Python/leo\ immobilien\ cli/main.py"
 alias imgdispH="read -p '' URL && wget -O /tmp/imgdisp $URL && img2txt -H $(tput lines) -d fstein -f utf8 /tmp/imgdisp && rm /tmp/imgdisp"
@@ -8,4 +8,12 @@ alias imgdispW="read -p '' URL && wget -O /tmp/imgdisp $URL && img2txt -W $(tput
 alias ccompile="gcc -o main main.c && ./main"
 alias isrunning="ps -A | grep -i"
 
-alias desktop-exec="\$(cat redshift-gtk.desktop | grep Exec= | cut -c 6-)"
+function desktop-exec()
+{
+	file=$(cat $1 | grep "Exec=" | cut -c 6-)
+	echo $file
+	eval $file
+}
+
+alias refresh-bashrc="source ~/.bashrc_personal"
+
