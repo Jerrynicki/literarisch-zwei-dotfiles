@@ -20,6 +20,12 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
+:map <F5> :redraw!<CR>
+:map <F7> :tabp<CR>
+:map <F8> :tabn<CR>
+:map to :tabe<Space>
+:map tx :tabc<CR>
+
 :set title
 
 if filereadable("/etc/vim/vimrc.local")
