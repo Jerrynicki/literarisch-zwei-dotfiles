@@ -15,5 +15,13 @@ function desktop-exec()
 	eval $file
 }
 
-alias refresh-bashrc="source ~/.bashrc_personal"
+alias ytdlbest="youtube-dl -f bestvideo+bestaudio "
+alias ytdlaudio="youtube-dl -f bestaudio "
+function ytdl720()
+{
+	quality="$(youtube-dl $1 -F | grep 720p | grep -o -E "[0-9]+" | head -n 1)"
+	echo "Quality option: $quality"
+	youtube-dl -f $quality+bestaudio $1
+}
 
+alias refresh-bashrc="source ~/.bashrc_personal"
