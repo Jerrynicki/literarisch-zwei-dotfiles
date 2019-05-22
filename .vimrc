@@ -20,6 +20,9 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
+autocmd BufEnter *.md inoremap <CR> <CR><CR>
+autocmd BufEnter *.pas inoremap begin<CR> begin<CR><CR>end;<Up><Tab><End>
+
 :map <F5> :redraw!<CR>
 :map <F7> :tabp<CR>
 :map <F8> :tabn<CR>
