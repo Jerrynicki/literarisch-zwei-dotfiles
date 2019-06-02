@@ -21,15 +21,18 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
 autocmd BufEnter *.md inoremap <CR> <CR><CR>
-autocmd BufEnter *.pas inoremap begin<CR> begin<CR><CR>end;<Up><Tab><End>
 
-:map <F5> :redraw!<CR>
-:map <F7> :tabp<CR>
-:map <F8> :tabn<CR>
-:map to :tabe<Space>
-:map tx :tabc<CR>
+map <F5> :redraw!<CR>
+map <F7> :tabp<CR>
+map <F8> :tabn<CR>
+map to :tabe<Space>
+map tx :tabc<CR> 
 
-:set title
+map <Tab> <C-W>w
+map <Bar> <C-W>v
+map - <C-W>s
+
+set title
 
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
