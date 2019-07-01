@@ -21,6 +21,7 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
 autocmd BufEnter *.md inoremap <CR> <CR><CR>
+autocmd BufEnter *.py map <F9> :!python3 main.py
 
 map <F5> :redraw!<CR>
 map <F7> :tabp<CR>
