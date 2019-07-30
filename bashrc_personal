@@ -41,3 +41,6 @@ alias cg++="g++ main.cpp && ./a.out"
 alias refresh-bashrc="source ~/.bashrc_personal"
 
 alias "gitgui"="LC_ALL=en_US.UTF-8 git gui"
+
+alias :q="firefox https://cdn.discordapp.com/emojis/462338298178830337.png?v=1"
+alias :wq=":q"

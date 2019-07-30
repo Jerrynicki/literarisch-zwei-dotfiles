@@ -4,6 +4,7 @@ syntax on
 call plug#begin("~/.local/share/nvim/plugged")
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 Plug 'scrooloose/nerdTree'
 Plug 'aurieh/discord.nvim', { 'do': ':UpdateRemotePlugins' }
 
@@ -14,6 +15,8 @@ nmap <C-n> :NERDTreeToggle<CR>
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#gocode_binary = "$GOPATH/bin/gocode"
+let g:deoplete#sources#go#package_dot = 1
 inoremap <expr><C-k> pumvisible()? "\<C-p>":"\<C-k>"
 inoremap <expr><C-j> pumvisible()? "\<C-n>":"\<C-j>"
 
@@ -43,9 +46,13 @@ autocmd BufEnter *.py map <F9> :!python3 main.py
 autocmd BufEnter *.go map <F9> :!go run main.go
 
 " Linters
-autocmd BufEnter *.go map <F10> :w<CR> | :!gofmt -w "%:p"<CR> | :edit!<CR>
+autocmd BufEnter *.go noremap <F10> :w <Bar> !gofmt -w "%:p"<CR><CR>:edit!<CR>
+autocmd BufEnter *.py noremap <F10> :w <Bar> !autopep8 -i "%:p"<CR><CR>:edit!<CR>
 
-map <F5> :redraw!<CR>
+" Secondary Linters
+autocmd BufEnter *.go noremap <F12> :w <Bar> !$GOPATH/bin/goreturns -w "%:p"<CR><CR>:edit!<CR>
+
+map <F5> :edit! <Bar> redraw!<CR>
 
 " Tabs
 map <F7> :tabp<CR>
