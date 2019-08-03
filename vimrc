@@ -1,25 +1,6 @@
 colo ron
 syntax on
 
-call plug#begin("~/.local/share/nvim/plugged")
-
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
-Plug 'scrooloose/nerdTree'
-Plug 'aurieh/discord.nvim', { 'do': ':UpdateRemotePlugins' }
-
-call plug#end()
-
-" Nerdtree
-nmap <C-n> :NERDTreeToggle<CR>
-
-" deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#go#gocode_binary = "$GOPATH/bin/gocode"
-let g:deoplete#sources#go#package_dot = 1
-inoremap <expr><C-k> pumvisible()? "\<C-p>":"\<C-k>"
-inoremap <expr><C-j> pumvisible()? "\<C-n>":"\<C-j>"
-
 set nu
 set relativenumber
 set cursorline
@@ -69,6 +50,25 @@ map T :terminal<CR>
 
 " Weil Reol - No Title zu langweilig war
 set title
+
+call plug#begin("~/.local/share/nvim/plugged")
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+Plug 'scrooloose/nerdTree'
+Plug 'aurieh/discord.nvim', { 'do': ':UpdateRemotePlugins' }
+
+call plug#end()
+
+" Nerdtree
+nmap <C-n> :NERDTreeToggle<CR>
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#gocode_binary = "$GOPATH/bin/gocode"
+let g:deoplete#sources#go#package_dot = 1
+inoremap <expr><C-k> pumvisible()? "\<C-p>":"\<C-k>"
+inoremap <expr><C-j> pumvisible()? "\<C-n>":"\<C-j>"
 
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
