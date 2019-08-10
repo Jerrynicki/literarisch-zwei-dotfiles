@@ -22,6 +22,10 @@ inoremap {;<CR> {<CR>};<ESC>O
 
 autocmd BufEnter *.md inoremap <CR> <CR><CR>
 
+autocmd BufEnter *.html inoremap < <><left>
+autocmd BufEnter *.html map ; vby<ESC>2w<left>i\</<ESC>pa\>
+
+
 " File execution
 autocmd BufEnter *.py map <F9> :!python3 main.py
 autocmd BufEnter *.go map <F9> :!go run main.go
@@ -31,7 +35,7 @@ autocmd BufEnter *.go noremap <F10> :w <Bar> !gofmt -w "%:p"<CR><CR>:edit!<CR>
 autocmd BufEnter *.py noremap <F10> :w <Bar> !autopep8 -i "%:p"<CR><CR>:edit!<CR>
 
 " Secondary Linters
-autocmd BufEnter *.go noremap <F12> :w <Bar> !$GOPATH/bin/goreturns -w "%:p"<CR><CR>:edit!<CR>
+autocmd BufEnter *.go noremap <F12> :w <Bar> !$GOPATH/bin/goreturns -w "%:p"<CR>
 
 map <F5> :edit! <Bar> redraw!<CR>
 
