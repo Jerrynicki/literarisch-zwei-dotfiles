@@ -8,6 +8,8 @@ set cursorline
 set autoindent
 set smartindent
 
+set tabstop=4
+
 if has("autocmd")
   filetype plugin indent on
 endif
