@@ -1,4 +1,4 @@
-colo ron
+color corvine " https://github.com/arzg/vim-corvine
 syntax on
 
 set nu
