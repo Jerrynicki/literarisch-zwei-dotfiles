@@ -6,7 +6,8 @@ set relativenumber
 set cursorline
 
 set autoindent
-set smartindent
+" set smartindent conflicts with filetype-based indentation - how the fuck did
+" i not notice that
 
 set tabstop=4
 
