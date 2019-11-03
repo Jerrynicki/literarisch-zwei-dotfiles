@@ -5,11 +5,11 @@ set nu
 set relativenumber
 set cursorline
 
-set autoindent
+" set autoindent
 " set smartindent conflicts with filetype-based indentation - how the fuck did
 " i not notice that
 
-set tabstop=4
+set tabstop=8
 
 if has("autocmd")
   filetype plugin indent on
